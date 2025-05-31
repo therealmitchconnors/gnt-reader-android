@@ -1,0 +1,14 @@
+{
+  "name": "Android Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+//   "settings": {
+//     "terminal.integrated.shell.linux": "/bin/bash"
+//   },
+  "postCreateCommand": "sudo yes | sdkmanager --licenses",
+  "mounts": [
+    "source=${localEnv:HOME}/.android,target=/root/.android,type=bind"
+  ],
+  "remoteUser": "vscode"
+}
