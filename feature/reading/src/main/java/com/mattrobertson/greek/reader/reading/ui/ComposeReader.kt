@@ -35,7 +35,8 @@ fun ComposeReader(
     settings: Settings,
     verseRepo: VerseRepo,
     listState: LazyListState,
-    onWordSelected: (word: Word) -> Unit
+    onWordSelected: (word: Word) -> Unit,
+    modifier: Modifier = Modifier
 ) {
     val coroutineScope = rememberCoroutineScope()
 
@@ -52,7 +53,7 @@ fun ComposeReader(
         }
     }
 
-    Box {
+    Box(modifier = modifier) {
         // Top Preview Bar
         if (listState.isScrollInProgress) {
             val ref = VerseRef.fromAbsoluteChapterNum(listState.firstVisibleItemIndex)

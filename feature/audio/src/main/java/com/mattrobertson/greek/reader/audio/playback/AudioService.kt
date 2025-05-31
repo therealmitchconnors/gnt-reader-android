@@ -60,6 +60,8 @@ class AudioService: MediaSessionService() {
     override fun onCreate() {
         super.onCreate()
 
+
+        @androidx.media3.common.util.UnstableApi
         player = ExoPlayer.Builder(this)
             .setSeekBackIncrementMs(10_000)
             .setSeekForwardIncrementMs(10_000)
